@@ -1,0 +1,14 @@
+{
+  "name": "pi-document-convert",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Project-local document conversion helper for Pi downloads.",
+  "type": "module",
+  "exports": "./index.mjs",
+  "bin": {
+    "pi-document-convert": "./cli.mjs"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

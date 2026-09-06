@@ -1,0 +1,5 @@
+# Optional OCR backend. PaddlePaddle wheels are platform-specific; if this
+# requirements file fails on your platform, install the appropriate CPU wheel
+# from Paddle's official instructions, then install paddleocr.
+paddleocr>=3.0
+paddlepaddle>=3.0
