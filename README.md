@@ -15,3 +15,27 @@ soft-wraps pathological one-line prose while leaving Markdown/HTML table lines
 untouched.
 
 Configuration is read from `.pi/document-convert.json`.
+
+## Install (split repo)
+
+Previously installed by the shared `pi-harness/install.sh`. Standalone equivalent:
+
+```bash
+# Node deps (no runtime deps, Node >=22.19)
+pnpm install
+
+# Python native-text backend (Python 3.11+)
+python3 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip setuptools wheel
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -c 'import pymupdf, pymupdf4llm; print("PyMuPDF OK")'
+```
+
+Optional PaddleOCR backend:
+
+```bash
+.venv/bin/python -m pip install -r requirements-paddle.txt
+.venv/bin/python -c 'import paddleocr; print("PaddleOCR OK")'
+```
+
+Point the harness at this checkout with `PI_DOCUMENT_CONVERT_CMD=<repo>/cli.mjs` and `PI_DOCUMENT_CONVERT_PYTHON=<repo>/.venv/bin/python`.
